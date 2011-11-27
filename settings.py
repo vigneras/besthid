@@ -7,6 +7,8 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+AUTH_PROFILE_MODULE = 'writing.UserProfile'
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -117,6 +119,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'writing',
 )
 
 # A sample logging configuration. The only tangible logging
