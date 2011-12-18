@@ -1,17 +1,22 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.contrib import admin
+from django.contrib.auth.views import login, logout
+from django.views.generic import TemplateView
+
 
 # Uncomment the next two lines to enable the admin:
-from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'besthid.views.home', name='home'),
-    # url(r'^besthid/', include('besthid.foo.urls')),
+                       url(r'^$', TemplateView.as_view(template_name="index.html")),
+                       url(r'^about$', TemplateView.as_view(template_name="about.html")),
+                       url(r'^logout$', logout, name="logout"),
+                       url(r'^login$', login, name="login"),
+                       url(r'^accounts/', include('accounts.urls')),
+                       url(r'^writing/', include('writing.urls')),
+                       url(r'^reading/', include('reading.urls')),
+                       url(r'^pointing/', include('pointing.urls')),
+                       url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+                       url(r'^admin/', include(admin.site.urls)),
+                       )
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-)

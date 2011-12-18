@@ -1,0 +1,20 @@
+{% if user.is_authenticated %}
+    <a href="{% url me %}">{{ user.username }}</a> <a href="{% url logout %}">logout</a>
+{% else %}
+    <a href="{% url login %}">login</a>
+{% endif %}
+
+
+<h1>Best Human Interface Devices</h1>
+
+<ul>
+  <li>
+    <a href="{% url writing %}">For writing</a>
+  </li>
+  <li>
+    <a href="{% url reading %}">For reading</a>
+  </li>
+  <li>
+    <a href="{% url pointing %}">For pointing</a>
+  </li>
+</ul>

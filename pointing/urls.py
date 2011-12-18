@@ -8,7 +8,7 @@ from django.views.generic import TemplateView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'', TemplateView.as_view(template_name="writing/run.html"), name="writing"),
+                       url(r'', TemplateView.as_view(template_name="pointing/run.html"), name="pointing"),
                        )
 
 
